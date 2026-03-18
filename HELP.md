@@ -1,6 +1,7 @@
 # Getting Started
 
 ### Reference Documentation
+
 For further reference, please consider the following sections:
 
 * [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
@@ -15,6 +16,7 @@ For further reference, please consider the following sections:
 * [Spring Boot Actuator](https://docs.spring.io/spring-boot/4.0.3/reference/actuator/index.html)
 
 ### Guides
+
 The following guides illustrate how to use some features concretely:
 
 * [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
@@ -26,6 +28,7 @@ The following guides illustrate how to use some features concretely:
 * [Building a RESTful Web Service with Spring Boot Actuator](https://spring.io/guides/gs/actuator-service/)
 
 ### Additional Links
+
 These additional references should also help you:
 
 * [Configure AOT settings in Build Plugin](https://docs.spring.io/spring-boot/4.0.3/how-to/aot.html)
@@ -36,6 +39,7 @@ This project has been configured to let you generate either a lightweight contai
 It is also possible to run your tests in a native image.
 
 ### Lightweight Container with Cloud Native Buildpacks
+
 If you're already familiar with Spring Boot container images support, this is the easiest way to get started.
 Docker should be installed and configured on your machine prior to creating the image.
 
@@ -52,6 +56,7 @@ $ docker run --rm -p 8080:8080 springsteps:0.0.1-SNAPSHOT
 ```
 
 ### Executable with Native Build Tools
+
 Use this option if you want to explore more options such as running your tests in a native image.
 The GraalVM `native-image` compiler should be installed and configured on your machine.
 
@@ -64,6 +69,7 @@ $ ./mvnw native:compile -Pnative
 ```
 
 Then, you can run the app as follows:
+
 ```
 $ target/springsteps
 ```
@@ -77,11 +83,11 @@ To run your existing tests in a native image, run the following goal:
 $ ./mvnw test -PnativeTest
 ```
 
-
 ### Maven Parent overrides
 
 Due to Maven's design, elements are inherited from the parent POM to the project POM.
-While most of the inheritance is fine, it also inherits unwanted elements like `<license>` and `<developers>` from the parent.
+While most of the inheritance is fine, it also inherits unwanted elements like `<license>` and `<developers>` from the
+parent.
 To prevent this, the project POM contains empty overrides for these elements.
 If you manually switch to a different parent and actually want the inheritance, you need to remove those overrides.
 

@@ -17,6 +17,7 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
+        <argLine/>
         <!-- Spring Boot Java version feature. -->
         <java.version>25</java.version>
     </properties>
@@ -152,7 +153,9 @@
                 </executions>
             </plugin>
 
-            <!-- Maven standard plugins. -->
+            <!-- =================================================================================================== -->
+            <!-- Maven standard plugins.                                                                             -->
+            <!-- =================================================================================================== -->
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -165,6 +168,31 @@
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
+            </plugin>
+
+            <!-- Fix surefire:test Mockito warning. -->
+            <!-- Add Mockito as an agent to your build. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <!--suppress MavenModelInspection -->
+                    <argLine>@{argLine} -javaagent:${org.mockito:mockito-core:jar}</argLine>
+                </configuration>
+            </plugin>
+
+            <!-- Fix surefire:test Mockito warning. -->
+            <!-- Add Mockito as an agent to your build. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>properties</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 
         </plugins>

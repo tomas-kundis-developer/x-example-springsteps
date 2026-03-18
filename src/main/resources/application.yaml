@@ -1,3 +1,12 @@
 spring:
   application:
     name: springsteps
+  datasource:
+    url: jdbc:postgresql://localhost:5432/springsteps_db
+    username: springsteps_db_role
+    # Password for local development database only.
+    password: dev123
+  sql:
+    init:
+      mode: always
+      platform: postgresql

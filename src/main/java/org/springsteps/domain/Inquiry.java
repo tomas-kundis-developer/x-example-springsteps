@@ -5,6 +5,8 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import java.util.UUID;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
 /**
  * Inquiry.
@@ -14,6 +16,7 @@ import lombok.Data;
  * <p>This domain object is also the database entity for brevity,
  * because of the microservice architecture with only one domain object.
  */
+@Table("inquiries")
 @Data
 public class Inquiry {
 
@@ -22,6 +25,7 @@ public class Inquiry {
    *
    * <p>UUID version 7.
    */
+  @Id
   private UUID id;
 
   @Email(message = "Invalid email address format.")

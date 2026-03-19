@@ -29,7 +29,7 @@ public class Inquiry {
   private UUID id;
 
   @Email(message = "Invalid email address format.")
-  @Size(min = 3, max = 2000, message = "Exceeded maximum length of the email.")
+  @Size(min = 3, max = 2000, message = "Text size out of the mininum/maximum length boundaries.")
   private String email;
 
   @Size(min = 1, max = 1000,
@@ -55,7 +55,7 @@ public class Inquiry {
   @Pattern(
       regexp = "^[a-zA-Z0-9+#][a-zA-Z0-9 +#]*$",
       message = "Invalid character in the phone number.")
-  @Size(min = 1, max = 50, message = "Exceeded maximum length of the phone number.")
+  @Size(min = 1, max = 50, message = "Text size out of the mininum/maximum length boundaries.")
   private String phoneNumber;
 
   @Size(min = 2, max = 20000, message =

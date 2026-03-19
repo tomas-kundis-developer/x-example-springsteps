@@ -19,7 +19,7 @@ class InquiryTest {
   void validateEmailTest() {
     var propertyName = "email";
     var errorMessage = "Invalid email address format.";
-    var errorMessageSize = "Exceeded maximum length of the email.";
+    var errorMessageSize = "Text size out of the mininum/maximum length boundaries.";
 
     // PASS: Null
 
